@@ -94,6 +94,40 @@ class Character extends FlxSprite
 		var library:String = null;
 		switch (curCharacter)
 		{
+			case 'gf':
+				// GIRLFRIEND CODE
+				frames = AtlasFrameMaker.construct('FULL_GF',
+				['GF Dance Beat','Sad','Cheer','Left','Down','Up','Right','Fear']
+				);
+				//frames = tex;
+				animation.addByPrefix('cheer', 'Cheer', 24, false);
+				animation.addByPrefix('singLEFT', 'Left', 24, false);
+				animation.addByPrefix('singRIGHT', 'Right', 24, false);
+				animation.addByPrefix('singUP', 'Up', 24, false);
+				animation.addByPrefix('singDOWN', 'Down', 24, false);
+				animation.addByIndices('sad', 'Sad', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "", 24, false);
+				animation.addByIndices('danceLeft', 'GF Dance Beat', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+				animation.addByIndices('danceRight', 'GF Dance Beat', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				animation.addByIndices('hairBlow', "GF Dancing Beat Hair blowing", [0, 1, 2, 3], "", 24);
+				animation.addByIndices('hairFall', "GF Dancing Beat Hair Landing", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "", 24, false);
+				animation.addByPrefix('scared', 'Fear', 24);
+
+				addOffset('cheer', 2, -28);
+				addOffset('sad', -8, -16);
+				addOffset('danceLeft', 2, -11);
+				addOffset('danceRight', 2, -11);
+
+				addOffset("singUP", 2, -28);
+				addOffset("singRIGHT", 2, -20);
+				addOffset("singLEFT", 3, -14);
+				addOffset("singDOWN", 3, -44);
+				addOffset('hairBlow', 35, -31);
+				addOffset('hairFall', -9, -12);
+
+				addOffset('scared', 1, -22);
+
+				playAnim('danceRight');
+
 			//case 'your character name in case you want to hardcode them instead':
 
 			default:
