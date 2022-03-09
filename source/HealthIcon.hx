@@ -15,6 +15,9 @@ class HealthIcon extends FlxSprite
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
 		super();
+		loadGraphic(Paths.image('iconGrid'), true, 150, 150);
+
+		animation.add('gf', [16], 0, false, isPlayer);
 		isOldIcon = (char == 'bf-old');
 		this.isPlayer = isPlayer;
 		changeIcon(char);
