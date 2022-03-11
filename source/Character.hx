@@ -128,6 +128,273 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
+			case 'gf-eggman':
+				frames = AtlasFrameMaker.construct('EGGMAN');
+				animation.addByIndices('danceLeft', 'Dancing Beat', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+				animation.addByIndices('danceRight', 'Dancing Beat', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				playAnim('danceRight');
+				setGraphicSize(Std.int(width * 0.8));
+				updateHitbox();
+
+				addOffset('danceLeft', 2, -11);
+				addOffset('danceRight', 2, -11);
+
+			case 'gfpico':
+				// GIRLFRIEND CODE
+				//tex = AtlasFrameMaker.construct('assets/images/TextureAtlas/PICO_GF')
+				frames = AtlasFrameMaker.construct('FULL_GF',
+				['GF Dance Beat 2','Sad 2','GF Dancing Beat Hair Blowing 2','GF Dancing Beat Hair Landing 2']);
+				animation.addByPrefix('sad', 'Sad 2', 24, false);
+				animation.addByIndices('danceLeft', 'GF Dance Beat 2', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+				animation.addByIndices('danceRight', 'GF Dance Beat 2', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				animation.addByIndices('hairBlow', "GF Dancing Beat Hair Blowing 2", [0, 1, 2, 3], "", 24);
+				animation.addByIndices('hairFall', "GF Dancing Beat Hair Landing 2", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "", 24, false);
+
+				addOffset('sad', 2, -24);
+				addOffset('danceLeft', 2, -11);
+				addOffset('danceRight', 2, -11);
+
+				addOffset('hairBlow', -9, -59);
+				addOffset('hairFall', -10, -35);
+
+				playAnim('danceRight');
+
+			case 'gfpico2':
+				// GIRLFRIEND CODE
+			
+				frames = AtlasFrameMaker.construct('FULL_GF',
+				['GF Dance Beat 3','Sad 3','GF Dancing Beat Hair Blowing 3','GF Dancing Beat Hair Landing 3']);
+				// frames = tex;
+				 animation.addByIndices('sad', 'Sad 3', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "", 24, false);
+				animation.addByIndices('danceLeft', 'GF Dance Beat 3', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+				animation.addByIndices('danceRight', 'GF Dance Beat 3', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				animation.addByIndices('hairBlow', "GF Dancing Beat Hair Blowing 3", [0, 1, 2, 3], "", 24);
+				animation.addByIndices('hairFall', "GF Dancing Beat Hair Landing 3", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "", 24, false);
+			
+
+				addOffset('sad', 4, -25);
+				addOffset('danceLeft', 2, -11);
+				addOffset('danceRight', 2, -11);
+
+				addOffset('hairBlow', -12, -61);
+				addOffset('hairFall', -7, -37);
+
+				playAnim('danceRight');
+
+			case 'dad':
+				// DAD ANIMATION LOADING CODE
+				frames = AtlasFrameMaker.construct('DAD');
+				animation.addByPrefix('idle', 'Idle',24);
+				animation.addByPrefix('singUP', 'Up', 24);
+				animation.addByPrefix('singDOWN', 'Down',24);
+				animation.addByPrefix('singLEFT', 'Left',24);
+				animation.addByPrefix('singRIGHT', 'Right',24);
+
+
+				addOffset('idle', 0, 170);
+				addOffset("singUP", 6, 192);
+				addOffset("singRIGHT", -3, 144);
+				addOffset("singLEFT", 54, 140);
+				addOffset("singDOWN", 3, 113);
+
+				playAnim('idle');
+
+			case 'mom-car':
+				frames = AtlasFrameMaker.construct('HD_MOM');
+
+				animation.addByPrefix('idle', "Idle", 24, false);
+				animation.addByPrefix('singUP', "Up", 24, false);
+				animation.addByPrefix('singDOWN', "Down", 24, false);
+				animation.addByPrefix('singLEFT', 'Left', 24, false);
+				// ANIMATION IS CALLED MOM LEFT POSE BUT ITS FOR THE RIGHT
+				// CUZ DAVE IS DUMB!
+				animation.addByPrefix('singRIGHT', 'Right', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 35, 105);
+				addOffset("singRIGHT", 58, -35);
+				addOffset("singLEFT", 230, 37);
+				addOffset("singDOWN", 20, -176);
+
+				playAnim('idle');
+
+
+			case 'pico':
+			
+				frames = AtlasFrameMaker.construct('PICO');
+				animation.addByPrefix('idle','Idle',24,false);
+				animation.addByPrefix('singUP','Up',24,false);
+				animation.addByPrefix('singRIGHT','Left',24,false);
+				animation.addByPrefix('singLEFT','Right',24,false);
+				animation.addByPrefix('singDOWN','Down',24,false);
+				animation.addByPrefix('shoot','Shoot',24,false);
+
+				animation.addByPrefix('idle-cracked','Cracked Idle',24,false);
+				animation.addByPrefix('singUP-cracked','Cracked Up',24,false);
+				animation.addByPrefix('singRIGHT-cracked','Cracked Left',24,false);
+				animation.addByPrefix('singLEFT-cracked','Cracked Right',24,false);
+				animation.addByPrefix('singDOWN-cracked','Cracked Down',24,false);
+				animation.addByPrefix('shoot-cracked','Cracked Shoot',24,false);
+				
+		
+				// frameWidth = Std.int(frames.getByIndex(0).parent.width / 2);
+				// frameHeight = Std.int(frames.getByIndex(0).parent.height / 2);
+
+				addOffset('idle', 0, 0);
+
+				addOffset("singUP", -24, 102);
+
+				addOffset("singLEFT", 60, 1);
+
+				addOffset("singRIGHT", -41, -5);
+
+				addOffset("singDOWN", 118, 3);
+
+				addOffset("shoot", 128, 116);
+
+				addOffset('idle-cracked', 0, 0);
+
+				addOffset("singUP-cracked", -24, 102);
+
+				addOffset("singLEFT-cracked", 60, 1);
+
+				addOffset("singRIGHT-cracked", -41, -5);
+
+				addOffset("singDOWN-cracked", 118, 3);
+
+				addOffset("shoot-cracked", 128, 116);
+
+
+				playAnim('idle');
+
+				flipX = true;
+
+			case 'bf':
+				//var tex = Paths.getSparrowAtlas('characters/BOYFRIEND');
+				frames = AtlasFrameMaker.construct('HD_BF');
+
+				animation.addByPrefix('idle','Idle',24,false);
+				animation.addByPrefix('idle-stressed', 'Stressed Idle', 24, false);
+				animation.addByPrefix('singUP', 'Up', 24, false);
+				animation.addByPrefix('singUP-stressed', 'Stressed Up', 24, false);
+				animation.addByPrefix('singLEFT','Left',24, false);
+				animation.addByPrefix('singLEFT-stressed', 'Stressed Left', 24, false);
+				animation.addByPrefix('singRIGHT', 'Right', 24, false);
+				animation.addByPrefix('singRIGHT-stressed', 'Stressed Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Down', 24, false);
+				animation.addByPrefix('singDOWN-stressed', 'Stressed Down', 24, false);
+				animation.addByPrefix('singUPmiss', 'Miss Up', 24, false);
+				animation.addByPrefix('singUPmiss-stressed', 'Miss Up', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'Miss Left', 24, false);
+				animation.addByPrefix('singLEFTmiss-stressed', 'Miss Left', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'Miss Right', 24, false);
+				animation.addByPrefix('singRIGHTmiss-stressed', 'Miss Right', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'Miss Down', 24, false);
+				animation.addByPrefix('singDOWNmiss-stressed', 'Miss Down', 24, false);
+				animation.addByPrefix('hey', 'HEY!!', 24, false);
+
+				animation.addByPrefix('scared', 'Shaking', 24);
+				setGraphicSize(Std.int(width * 0.94));
+				updateHitbox();
+
+				addOffset('idle', -5);
+				addOffset("singUP", -49, 92);
+				addOffset("singRIGHT", -62, 9);
+				addOffset("singLEFT", -14, 4);
+				addOffset("singDOWN", -8, -38);
+
+				addOffset("singUPmiss", -63, -56);
+				addOffset("singRIGHTmiss", -66, -59);
+				addOffset("singLEFTmiss", -39, -54);
+				addOffset("singDOWNmiss", -51, -92);
+
+				addOffset('idle-stressed', -5);
+				addOffset("singUP-stressed", -49, 92);
+				addOffset("singRIGHT-stressed", -62, 9);
+				addOffset("singLEFT-stressed", -14, 4);
+				addOffset("singDOWN-stressed", -8, -38);
+
+				//addOffset("singUPmiss-stressed", -45, 54);
+				//addOffset("singRIGHTmiss-stressed", -42, 54);
+				//addOffset("singLEFTmiss-stressed", 1, 17);
+				//addOffset("singDOWNmiss-stressed", -32, -43);
+
+				//addOffset("hey", -1, -1);
+				//addOffset('scared', -5, 9);
+
+				playAnim('danceLeft');
+				// color = FlxColor.BLACK;
+
+				flipX = true;
+
+			case 'bf-car':
+				//var tex = Paths.getSparrowAtlas('characters/bfCar');
+				frames = AtlasFrameMaker.construct('HD_BF_CAR');
+				animation.addByPrefix('idle', 'Idle', 24, false);
+				animation.addByPrefix('idle-stressed', 'Stressed Idle', 24, false);
+				animation.addByIndices('singUP', 'Up',[0,1,2,3],"", 24, false);
+				animation.addByIndices('singUP-stressed', 'Stressed Up',[0,1,2,3],"", 24, false);
+				animation.addByIndices('singLEFT', 'Left',[0,1,2,3],"", 24, false);
+				animation.addByIndices('singLEFT-stressed', 'Stressed Left',[0,1,2,3],"", 24, false);
+				animation.addByIndices('singRIGHT', 'Right',[0,1,2,3],"", 24, false);
+				animation.addByIndices('singRIGHT-stressed', 'Stressed Right',[0,1,2,3],"", 24, false);
+				animation.addByIndices('singDOWN', 'Down',[0,1,2,3],"", 24, false);
+				animation.addByIndices('singDOWN-stressed', 'Stressed Down',[0,1,2,3],"", 24, false);
+				animation.addByPrefix('singUPmiss', 'Up Miss', 24, false);
+				animation.addByPrefix('singUPmiss-stressed', 'Up Miss', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'Left Miss', 24, false);
+				animation.addByPrefix('singLEFTmiss-stressed', 'Left Miss', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'Right Miss', 24, false);
+				animation.addByPrefix('singRIGHTmiss-stressed', 'Right Miss', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'Miss Down', 24, false);
+				animation.addByPrefix('singDOWNmiss-stressed', 'Miss Down', 24, false);
+				animation.addByPrefix('dodge', 'Dodge', 24, false);
+				addOffset('idle', -5);
+				addOffset("singUP", -17, 24);
+				addOffset("singRIGHT", -20, -4);
+				addOffset("singLEFT", 12, -15);
+				addOffset("singDOWN", -16, -79);
+				addOffset("singUPmiss", -20, 15);
+				addOffset("singRIGHTmiss", -15, -21);
+				addOffset("singLEFTmiss", 9, -21);
+				addOffset("singDOWNmiss", -11, -69);
+				addOffset('idle-stressed', 12, 4);
+				addOffset("singUP-stressed", 0, 14);
+				addOffset("singRIGHT-stressed", -21, 0);
+				addOffset("singLEFT-stressed", -10, -6);
+				addOffset("singDOWN-stressed", -27, -47);
+				addOffset("singUPmiss-stressed", -74, 66);
+				addOffset("singRIGHTmiss-stressed", -14, 6);
+				addOffset("singLEFTmiss-stressed", -18, -9);
+				addOffset("singDOWNmiss-stressed", -37, -61);
+				addOffset('dodge', 52, -37);
+				playAnim('idle');
+
+				flipX = true;
+
+			case 'parents-christmas-atlas':
+				frames = AtlasFrameMaker.construct('PARENTS_CHRISTMAS');
+				animation.addByPrefix('idle', 'Parent Christmas Idle', 24, false);
+				animation.addByPrefix('singUP', 'Up Dad', 24, false);
+				animation.addByPrefix('singDOWN', 'Down Dad', 24, false);
+				animation.addByPrefix('singLEFT', 'Left Dad', 24, false);
+				animation.addByPrefix('singRIGHT', 'Right Dad', 24, false);
+				animation.addByPrefix('singUP-alt', 'Up Mom', 24, false);
+				animation.addByPrefix('singDOWN-alt', 'Down Mom', 24, false);
+				animation.addByPrefix('singLEFT-alt', 'Left Mom', 24, false);
+				animation.addByPrefix('singRIGHT-alt', 'Right Mom', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", -73, 36);
+				addOffset("singRIGHT", -1, 4);
+				addOffset("singLEFT", 0, 6);
+				addOffset("singDOWN", -38, -1);
+				addOffset("singUP-alt", -43, 27);
+				addOffset("singRIGHT-alt", 0, 0);
+				addOffset("singLEFT-alt", -3, 7);
+				addOffset("singDOWN-alt", -40, -15);
+
+				playAnim('idle');
 			//case 'your character name in case you want to hardcode them instead':
 
 			default:
